@@ -2,13 +2,11 @@ import './App.css'
 import * as THREE from 'three'
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
-// import { LoadingManager } from 'three';
 import { FirstPersonCamera } from './3d helpers/controls'
 import UserVisualization from './3d helpers/userVisualization';
 
 const userName = Math.random().toString();
 const loadingVisualization = document.getElementById("loading");
-// const loadingManager = new LoadingManager();
 
 const scene = new THREE.Scene();
 scene.background = new THREE.Color(0xffffff);
@@ -32,7 +30,7 @@ const dracoLoader = new DRACOLoader();
 dracoLoader.setDecoderPath( '/examples/jsm/libs/draco/' );
 loader.setDRACOLoader( dracoLoader );
 loader.load(
-  'src/assets/gallery texturing.glb',
+  '/gallery texturing.glb',
   function ( gltf ) {
     gltf.scene.position.y = -1.7;
     scene.add(gltf.scene);
@@ -51,10 +49,10 @@ loader.load(
   }
 );
 
-new THREE.TextureLoader().load('src/assets/bridge.png', function (texture) {
+new THREE.TextureLoader().load('/bridge.png', function (texture) {
   var material = new THREE.MeshBasicMaterial({map: texture, transparent: true});
   loader.load(
-    'src/assets/bridge.glb',
+    '/bridge.glb',
     function ( gltf ) {
       gltf.scene.position.y = -1.7;
       gltf.scene.traverse((o) => {
