@@ -1,0 +1,79 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+  position: fixed;
+  font-family: 'Eczar', serif;
+}
+
+#bg {
+  position: fixed;
+  z-index: 0;
+}
+
+#blocker {
+  z-index: 99;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+#instructions {
+  background-color: rgba(0,0,0,0.8);
+  padding: 64px;
+  padding-top: 256px;
+  padding-bottom: 256px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+  cursor: pointer;
+}
+
+#loading {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+}
+
+ul {
+  text-align: justify;
+  width: 512px;
+}
+
+p {
+  text-align: justify;
+  width: 512px;
+}
+
+.controls {
+  text-align: center;
+}
+
+.space {
+  height: 256px;
+}
+
+@media only screen and (max-width: 768px) {
+  ul {
+    width: 100%;
+    text-align: start;
+  }
+
+  p {
+    width: 100%;
+    text-align: start;
+  }
+}
